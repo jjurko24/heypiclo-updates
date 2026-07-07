@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hey Piclo changelog</title>
+<style>:root{color-scheme:light dark}
+body{font:14px/1.6 -apple-system,BlinkMacSystemFont,sans-serif;max-width:600px;
+margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wrap}
+@media(prefers-color-scheme:dark){body{color:#e8e8ed;background:#161618}}</style>
+</head><body>
+# Hey Piclo changelog
+
+All notable changes per released version, newest first. The publish script turns
+this into the release notes Sparkle shows with each update prompt.
+
+## 0.1.1 (build 2) — 2026-07-07
+
+First shareable beta.
+
+### Added
+- First-run setup window: gestures, live permission status, optional AI key.
+- Getting Started guide, bundled in the app and in the DMG.
+- Share Diagnostic Log menu item (content-free log, emailed to John).
+- Default shortcuts: Control+Option+V toggles Vault Mode, Control+Option+D cycles
+  the dictation level. Both rebindable.
+- Sparkle auto-update with a real signing key: this build updates itself once
+  the update feed is live.
+
+### Fixed
+- Vault Mode never refuses to turn on: without a local model it now switches to
+  fully on-device raw dictation instead of failing silently.
+- Snippet triggers no longer fire on ordinary speech about snippets (the
+  "snippet at my address" false-expansion leak).
+- Command Mode can no longer paste its internal prompt scaffolding when a cloud
+  model returns an empty reply.
+- Stuck recording when both Command keys were held and released across sides.
+- Clipboard is preserved across overlapping dictations and word fixes.
+- Dozens of smaller fixes from a full audit round (hotkeys, streaming,
+  single-instance, packaging).
+
+### Changed
+- Sharing with Piclo Bot is now off by default on fresh installs.
+- Keyboard shortcuts come alive right after Accessibility is granted, no
+  relaunch needed.
+</body></html>

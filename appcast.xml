@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Hey Piclo updates</title>
+    <link>https://updates.heypiclo.com/appcast.xml</link>
+    <description>Auto-update feed for Hey Piclo.</description>
+    <language>en</language>
+    <!-- publish-release.sh inserts new items below this line -->
+  </channel>
+</rss>
