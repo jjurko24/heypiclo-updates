@@ -11,6 +11,37 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 All notable changes per released version, newest first. The publish script turns
 this into the release notes Sparkle shows with each update prompt.
 
+## 0.1.2 (build 3) — unreleased
+
+### Fixed
+- The ghost "Thank you." Whisper sometimes added after your last sentence is
+  gone: trailing silence is trimmed before transcription, and a final phrase
+  is only ever dropped when it provably came from silence. A "thank you" you
+  actually said is never touched.
+- Starting dictation can no longer cut off a live Command Mode session (and
+  vice versa); each gesture only stops its own kind of recording.
+- Web research on the Claude engine works again (a wrong tool version made
+  every research command silently fall back to a non-web model).
+- Vault Mode is honest on fresh installs: no local model means Vault gives
+  exact on-device dictation, and leaving Vault only lands on an engine that
+  is actually set up.
+- Editing text that opens with an apology no longer makes commands silently
+  do nothing; words like "curl" or "link" no longer trigger fake web
+  research; mentioning an AI model by name no longer escalates cost tiers;
+  "make this a code snippet" edits instead of saving a snippet.
+- Commands are no longer wrapped in dictation scaffolding, and a failed paid
+  web search is not re-billed on another model.
+- Gestures and shortcuts arm within seconds of granting Accessibility on
+  first run; no relaunch needed.
+- Long error messages fit the status pill, and the pill appears on the
+  screen you are working on.
+- Appending at the cursor reports honestly when the paste could not land.
+
+### Changed
+- Hardened the command prompt against instructions hidden inside selected
+  text or the clipboard.
+- Faster dictation cleanup on Gemini's default model.
+
 ## 0.1.1 (build 2) — 2026-07-07
 
 First shareable beta.

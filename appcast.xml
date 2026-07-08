@@ -6,5 +6,17 @@
     <description>Auto-update feed for Hey Piclo.</description>
     <language>en</language>
     <!-- publish-release.sh inserts new items below this line -->
+    <item>
+      <title>Version 0.1.2</title>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://updates.heypiclo.com/changelog.html</sparkle:releaseNotesLink>
+      <pubDate>Wed, 08 Jul 2026 11:06:16 +0000</pubDate>
+      <enclosure
+        url="https://github.com/jjurko24/heypiclo-updates/releases/download/v0.1.2/Piclo-0.1.2.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="FFczp/F+POjmVMvdAiJn5mqcnRg8liITj3U+2V53zM7h8BTXIVe/jekkuUGc7LxKx95QYE9S969fUP2lComlDA==" length="9454031" />
+    </item>
   </channel>
 </rss>
