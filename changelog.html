@@ -8,75 +8,61 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 </head><body>
 # Hey Piclo changelog
 
-All notable changes per released version, newest first. The publish script turns
-this into the release notes Sparkle shows with each update prompt.
+All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
+
+## 0.1.7 (build 8) — 2026-07-08
+
+### Added
+- The Snippets settings now show the dynamic variables you can use: {date}, {time}, {datetime}, and {clipboard}.
+
+### Changed
+- The Getting Started guide recommends Msty for local models: free, no terminal, a few clicks.
+- Release notes in the update window now read as clean sentences.
 
 ## 0.1.6 (build 7) — 2026-07-08
 
 ### Changed
-- Command Mode's default gesture is now double-tap Command (was hold left
-  Command). If you already picked your own gesture, nothing changes.
+- Command Mode's default gesture is now double-tap Command (was hold left Command). If you already picked your own gesture, nothing changes.
 - Diagnostic logs and feedback now go to john@heypiclo.com.
 - The Getting Started guide reflects the new default.
 
 ## 0.1.5 (build 6) — 2026-07-08
 
 ### Changed
-- Short phrases up to five words now paste instantly more often: common word
-  endings (thanks, dictated) no longer get mistaken for garbled dictionary
-  terms and sent through a cloud round trip.
+- Short phrases up to five words now paste instantly more often: common word endings (thanks, dictated) no longer get mistaken for garbled dictionary terms and sent through a cloud round trip.
 
 ### Fixed
 - The Guide tab no longer shows a keyboard shortcut that was removed.
-- The fallback local model setting now links to the same how-to guide as the
-  main local model setup.
+- The fallback local model setting now links to the same how-to guide as the main local model setup.
 
 ## 0.1.4 (build 5) — 2026-07-08
 
 ### Changed
-- The app is now named "Hey Piclo" everywhere, including the Applications
-  folder and the permission panes. macOS may ask for Microphone and
-  Accessibility once more after this update; one-time.
+- The app is now named "Hey Piclo" everywhere, including the Applications folder and the permission panes. macOS may ask for Microphone and Accessibility once more after this update; one-time.
 - The Getting Started guide is back inside the DMG.
 
 ## 0.1.3 (build 4) — 2026-07-08
 
 ### Fixed
-- After an update, macOS may ask for Accessibility once more; the app now
-  walks you to the right place. (One-time signature transition.)
+- After an update, macOS may ask for Accessibility once more; the app now walks you to the right place. (One-time signature transition.)
 - The menu bar status line is short again, so the menu is easy to scan.
-- The Settings window now shrinks back down when you lower the text size,
-  instead of keeping stale space on the right.
+- The Settings window now shrinks back down when you lower the text size, instead of keeping stale space on the right.
 
 ## 0.1.2 (build 3) — 2026-07-08
 
 ### Fixed
-- The ghost "Thank you." Whisper sometimes added after your last sentence is
-  gone: trailing silence is trimmed before transcription, and a final phrase
-  is only ever dropped when it provably came from silence. A "thank you" you
-  actually said is never touched.
-- Starting dictation can no longer cut off a live Command Mode session (and
-  vice versa); each gesture only stops its own kind of recording.
-- Web research on the Claude engine works again (a wrong tool version made
-  every research command silently fall back to a non-web model).
-- Vault Mode is honest on fresh installs: no local model means Vault gives
-  exact on-device dictation, and leaving Vault only lands on an engine that
-  is actually set up.
-- Editing text that opens with an apology no longer makes commands silently
-  do nothing; words like "curl" or "link" no longer trigger fake web
-  research; mentioning an AI model by name no longer escalates cost tiers;
-  "make this a code snippet" edits instead of saving a snippet.
-- Commands are no longer wrapped in dictation scaffolding, and a failed paid
-  web search is not re-billed on another model.
-- Gestures and shortcuts arm within seconds of granting Accessibility on
-  first run; no relaunch needed.
-- Long error messages fit the status pill, and the pill appears on the
-  screen you are working on.
+- The ghost "Thank you." Whisper sometimes added after your last sentence is gone: trailing silence is trimmed before transcription, and a final phrase is only ever dropped when it provably came from silence. A "thank you" you actually said is never touched.
+- Starting dictation can no longer cut off a live Command Mode session (and vice versa); each gesture only stops its own kind of recording.
+- Web research on the Claude engine works again (a wrong tool version made every research command silently fall back to a non-web model).
+- Vault Mode is honest on fresh installs: no local model means Vault gives exact on-device dictation, and leaving Vault only lands on an engine that is actually set up.
+- Editing text that opens with an apology no longer makes commands silently do nothing; words like "curl" or "link" no longer trigger fake web research; mentioning an AI model by name no longer escalates cost tiers; "make this a code snippet" edits instead of saving a snippet.
+- Commands are no longer wrapped in dictation scaffolding, and a failed paid web search is not re-billed on another model.
+- Gestures and shortcuts arm within seconds of granting Accessibility on first run; no relaunch needed.
+- Long error messages fit the status pill, and the pill appears on the screen you are working on.
 - Appending at the cursor reports honestly when the paste could not land.
 
 ### Changed
-- Hardened the command prompt against instructions hidden inside selected
-  text or the clipboard.
+- Hardened the command prompt against instructions hidden inside selected text or the clipboard.
 - Faster dictation cleanup on Gemini's default model.
 
 ## 0.1.1 (build 2) — 2026-07-07
@@ -87,25 +73,18 @@ First shareable beta.
 - First-run setup window: gestures, live permission status, optional AI key.
 - Getting Started guide, bundled in the app and in the DMG.
 - Share Diagnostic Log menu item (content-free log, emailed to John).
-- Default shortcuts: Control+Option+V toggles Vault Mode, Control+Option+D cycles
-  the dictation level. Both rebindable.
-- Sparkle auto-update with a real signing key: this build updates itself once
-  the update feed is live.
+- Default shortcuts: Control+Option+V toggles Vault Mode, Control+Option+D cycles the dictation level. Both rebindable.
+- Sparkle auto-update with a real signing key: this build updates itself once the update feed is live.
 
 ### Fixed
-- Vault Mode never refuses to turn on: without a local model it now switches to
-  fully on-device raw dictation instead of failing silently.
-- Snippet triggers no longer fire on ordinary speech about snippets (the
-  "snippet at my address" false-expansion leak).
-- Command Mode can no longer paste its internal prompt scaffolding when a cloud
-  model returns an empty reply.
+- Vault Mode never refuses to turn on: without a local model it now switches to fully on-device raw dictation instead of failing silently.
+- Snippet triggers no longer fire on ordinary speech about snippets (the "snippet at my address" false-expansion leak).
+- Command Mode can no longer paste its internal prompt scaffolding when a cloud model returns an empty reply.
 - Stuck recording when both Command keys were held and released across sides.
 - Clipboard is preserved across overlapping dictations and word fixes.
-- Dozens of smaller fixes from a full audit round (hotkeys, streaming,
-  single-instance, packaging).
+- Dozens of smaller fixes from a full audit round (hotkeys, streaming, single-instance, packaging).
 
 ### Changed
 - Sharing with Piclo Bot is now off by default on fresh installs.
-- Keyboard shortcuts come alive right after Accessibility is granted, no
-  relaunch needed.
+- Keyboard shortcuts come alive right after Accessibility is granted, no relaunch needed.
 </body></html>
