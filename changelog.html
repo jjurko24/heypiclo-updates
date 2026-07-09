@@ -10,6 +10,16 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.1.9 (build 10) — 2026-07-08
+
+### Fixed
+- Long dictations no longer lose their endings: very long takes are cleaned in sentence-safe chunks, a new guard catches a model that trims or trails off and falls back to your exact words, and the output limit was doubled.
+
+### Added
+- Your raw words are saved to Recent dictations the moment they are transcribed, before any cleanup, so nothing is ever lost if a step fails.
+- A live word count on the pill while you dictate, so you can see your words are being captured.
+- Very long takes wrap up safely: a warning at four minutes, then an automatic finish at five.
+
 ## 0.1.8 (build 9) — 2026-07-08
 
 ### Fixed
