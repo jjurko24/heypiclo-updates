@@ -10,6 +10,28 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.0 (build 11) — 2026-07-09
+
+### Added
+- A new speech engine, now the standard on Apple Silicon Macs: much faster, more accurate, and punctuation built in. It downloads once, about 480 MB, then runs entirely on your Mac.
+- A live word count on the pill while you dictate.
+- If nothing was heard, the pill now says so instead of finishing silently.
+
+### Changed
+- Whisper stays available in Settings, and remains the engine on Intel Macs and for languages the new engine does not cover.
+- Settings now shows which speech model is actually running, whichever engine you pick.
+- Raw takes in Recent dictations are preserved exactly as you said them, before any cleanup touches them.
+
+### Fixed
+- Silence is no longer transcribed into a stray courtesy phrase like "Thank you." — on either engine.
+- A long take that picked up only room noise is dropped before it reaches the cleanup model.
+- The app can no longer hang if the speech model's first download stalls; it fails cleanly and keeps dictating on the other engine.
+- The live word count moves at the pace of your speech instead of jumping, and holds steady when you pause.
+- Switching engines now warms the one you picked, not the previous one.
+
+### Known issues
+- Dictating as the very first thing into an empty chat box in some Electron apps (VS Code, web chat panels) can insert one leading space. Those apps report their placeholder text as if it were typed content, so there is no reliable way to tell an empty box from a full one. Typing or dictating anything into the box first avoids it.
+
 ## 0.1.9 (build 10) — 2026-07-08
 
 ### Fixed
