@@ -10,6 +10,43 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.1 (build 12) — 2026-07-11
+
+### Added
+- The Dictionary now takes whole term lists at once: Settings → Dictionary → "Add from a file…" accepts CSV or plain text, one term per line. Ask your AI for a project's vocabulary and drop the file in; re-importing updates terms instead of duplicating them.
+- Shelves keep a project's terms together. Create one from the chip row above your terms, rest it when the project wraps, and copy it out as CSV to share; imported lists can name their own shelf.
+- The vocabulary taught to your cleanup engine now follows what you actually use: recently used terms go first. Before, only your oldest 60 entries ever reached it, so new terms went untaught once the dictionary grew.
+- The term list is searchable once it grows past 15 entries, and every term now edits in place. Big dictionaries stay fast: a thousand terms cost about a millisecond per dictation.
+- Dictionary terms are word-first: add just a word or phrase ("Timbavati", "Kruger National Park") to teach Piclo your jargon, and only record a mishearing when a specific fix is needed.
+- Garbled names now fix themselves: when the speech engine writes a non-word that clearly resembles one of your dictionary words ("Nelsprite" for "Nelspruit"), or splits a name into two ("Nels Sprite", "Hood Spruit"), the word is restored automatically, before any cleanup runs and on every dictation level. Real words and unrelated names are never touched.
+- The Dictionary reads as a table now: shelf tabs across the top, Word and Heard as columns underneath, and an info dot that explains what tabs do. Rows lead with the word; corrections read "word, heard as".
+- Terms Piclo learns from your fixes now land on their own Learned shelf, so General stays exactly what you added yourself.
+- Your whole dictionary now reaches the cleanup engine. Before, only 60 entries ever did; vocabulary ships in full and recent terms lead.
+- Importing a Numbers or Excel file renamed .csv now says exactly what to do (export it as real CSV) instead of doing nothing. Imports also never move terms you already had onto another shelf.
+- Ready-to-use snippets out of the box: say "snippet date", "snippet time", "snippet date and time", or "snippet clipboard" and the live value is typed for you. Existing installs get them too; delete any you don't want and they stay gone.
+- "Say ..." hints across Settings: sections that understand spoken commands carry a small chip in their header. Click it for every phrase that works there, from expanding and saving snippets to switching modes, "think deeply", "deep search", and spoken punctuation.
+- The version number in Settings now opens the release notes, so you can always see what changed.
+- The Guide tab links to the full getting started guide that shipped with the download.
+
+### Changed
+- The Guide's "Good to know" topics now follow a new user's setup order: engine first, then dictionary and snippets, the speed dials, modes, and privacy. There's also a new "Voice commands" topic explaining the hint chips, and example commands on the Command Mode card.
+- The Smart command tier now says it auto-picks the model per task. It always did; the wording made it sound like you had to switch yourself.
+
+### Fixed
+- A word spoken after a long mid-dictation pause is no longer dropped or garbled: the finishing pass now finds where your speech resumes instead of transcribing the silence around it.
+- Short replies no longer keep a leading "um": instant inserts shed the hesitation ("Um, yeah that works" types "Yeah that works").
+- Short replies also stay on the instant path more reliably: a quirk in the garbled-name check could route everyday words ("good") through the full cleanup for nothing.
+- The hint and info popovers now follow your text-size setting instead of staying tiny.
+- Cleanup is firmer about stumbles in code editors: repeated words and false starts are treated as speech, not identifiers, so they're cleaned there like everywhere else.
+- A snippet dictated on its own no longer picks up a stray period at the end. In the middle of a sentence, it keeps the sentence's punctuation, as it should.
+- Snippets now fire even when the speech engine mishears "snippet" as "snip it", "snip at", "snap it", "snap at", or "snap that", including with a stray apostrophe, like "snap it's".
+- Words spoken very softly at the end of a take are transcribed again: the finishing pass no longer skips a quiet tail outright, it decodes it and lets the usual checks sort real speech from noise.
+- Dictionary words typed in lowercase get their capitalization back ("timbavati" becomes "Timbavati"), matching how single-word entries always behaved before this build.
+- A word your dictionary already fixed no longer routes a short reply through full cleanup for nothing: the instant path now checks the corrected text.
+- Fixing a word while the Learned shelf is resting now files it in General so the fix works immediately, instead of landing on the resting shelf where it would sit muted.
+- The "say it" chip on the Modes page now reads "auto mode", which is the phrase that actually works.
+- Confirmation pills stay up a beat longer: Done and the mode-switch and Learned confirmations hold a beat longer than before, so you can actually read what they say before they fade.
+
 ## 0.2.0 (build 11) — 2026-07-09
 
 ### Added
