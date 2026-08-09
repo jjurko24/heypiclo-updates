@@ -10,6 +10,20 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.2 (build 13) — 2026-08-09
+
+### Fixed
+- Sounds no longer go quiet after days of use. Piclo's cue player now rebuilds its connection to your speakers whenever the Mac changes audio devices, wakes from sleep, or swaps AirPods — the situations that used to leave it silently broken until a restart. If a cue ever fails now, the log says so instead of saying nothing.
+- A dictation that produces no text never just vanishes anymore. An empty take shows the quiet "Nothing heard" pill, and a transcription error says "Couldn't transcribe that" with the soft fail sound — you always know why nothing was typed.
+
+### Added
+- A new Agent mode for dictating to AI assistants: prose with proper punctuation, your full meaning kept as spoken, and technical terms, file paths, and names exactly as you said them. It switches on automatically in the Claude and ChatGPT apps and their browser tabs, and "switch to agent mode" works anywhere.
+- Code mode now tells the difference between talking to an AI coding assistant and dictating actual code. Instructions to your assistant read like normal writing; real code keeps its symbols and casing untouched.
+
+### Changed
+- The diagnostic log opt-in now switches itself off after 7 days. It exists for troubleshooting, and a forgotten toggle shouldn't quietly keep collecting your dictated text.
+- Update checks now note themselves in the log, so "is auto-update working?" has an answer.
+
 ## 0.2.1 (build 12) — 2026-07-11
 
 ### Added
