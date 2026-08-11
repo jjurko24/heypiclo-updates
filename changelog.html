@@ -10,6 +10,17 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.4 (build 15) — 2026-08-10
+
+### Fixed
+- "Strike out this paragraph" and "cross this out" now use the app's native strikethrough shortcut, like "strikethrough this" already did. Before, those phrasings went to the AI and could paste literal ~~tildes~~ into rich text.
+- A voice mode switch is no longer counted as a failed dictation in the diagnostic log.
+
+### Added
+- The new spoken commands are now discoverable: "send it" appears in the Say… hints on the Guide and Activation pages, and the formatting hint now lists strikethrough alongside bold, italic, and underline.
+- Cursor, Zed, and Windsurf now get Code mode automatically, the same treatment VS Code and the terminals already had — including its understanding that most dictation there is instructions to an AI assistant, not code.
+- When "send it" is spoken but the target app is no longer in front, Piclo notes in its log that the Return was withheld — so a send that didn't land is explainable.
+
 ## 0.2.3 (build 14) — 2026-08-10
 
 ### Fixed
