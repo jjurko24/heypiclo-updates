@@ -10,6 +10,15 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.6 (build 17) — 2026-08-19
+
+### Added
+- A local model now starts loading the moment you begin dictating, instead of when you stop. Local servers drop a model from memory after a few idle minutes, and that reload used to land after your take, as dead waiting. Now it happens while you speak: measured 10.3 seconds of waiting before, 2.0 after. Only applies when a local model is your engine — nothing is loaded on your behalf otherwise.
+
+### Changed
+- The microphone menu no longer repeats itself: "Studio Display Microphone" now reads "Studio Display", so the menu stops stretching the panel beneath it. Names that carry no redundancy, like "Scarlett 2i2 USB", are left alone.
+- Simpler wording in the local-model settings; the setup detail moved into the ⓘ beside the server address, where you need it.
+
 ## 0.2.5 (build 16) — 2026-08-19
 
 ### Fixed
