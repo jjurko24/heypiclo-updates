@@ -10,6 +10,22 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.5 (build 16) — 2026-08-19
+
+### Fixed
+- The live word count keeps up again. If you speak softly, the counter used to freeze almost immediately — it only advanced while your voice cleared a fairly loud bar, and a quiet voice transcribes perfectly while sitting under it. It now counts whenever the mic hears you.
+- "Remove the strikeouts", "undo the strikethrough", "turn off the bold" now actually turn formatting off, using the app's own shortcut. Before, these were misread as a request to rewrite the text, so the AI replaced your selection instead of changing its formatting.
+- If an audio device change leaves your microphone delivering silence — an occasional side-effect of AirPods or a dock connecting mid-take — Piclo now notices within a second and reconnects the mic, instead of recording a whole take of nothing. And a take that really did capture silence now says the mic was silent, rather than implying you didn't speak.
+
+### Added
+- Choose your microphone from the menu bar too — the Piclo menu now has a Microphone submenu, so you can switch to the mic you just moved next to without opening Settings.
+- Choose your microphone. Settings → General → Microphone lists every input on your Mac, so you can record from the one you actually sit next to instead of whatever macOS picks. If that mic isn't connected, Piclo quietly uses the system default. Worth doing if you dictate softly: a close mic is the one thing that genuinely improves accuracy.
+- Dictated emails are broken into paragraphs the way people actually read them — the opening pleasantry on its own, each topic separated, a closing line before your sign-off — instead of arriving as one block.
+- Local models are usable again. Many current local models "think" before answering, which for dictation cleanup is pure waiting — one 36B model took 35 seconds a take. Piclo now asks them to skip it (and falls back gracefully if a server doesn't understand the request), which took that same model to about a second. Recommended models in Settings are current again, too.
+- Piclo now notes when your input is quiet. Speech that sits below the normal level costs accuracy, and the log will now tell you so — worth a check if words come out wrong.
+- The dictionary says what it changed. Every replacement and repair is recorded, so a word that comes out wrong can finally be traced to the cause instead of guessed at.
+- Held-back dictations record what happened to them. When text waits on the clipboard because focus moved, inserting, opening Recents, or dismissing it is now noted.
+
 ## 0.2.4 (build 15) — 2026-08-10
 
 ### Fixed

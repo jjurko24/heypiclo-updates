@@ -7,6 +7,18 @@
     <language>en</language>
     <!-- publish-release.sh inserts new items below this line -->
     <item>
+      <title>Version 0.2.5</title>
+      <sparkle:version>16</sparkle:version>
+      <sparkle:shortVersionString>0.2.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://updates.heypiclo.com/changelog.html</sparkle:releaseNotesLink>
+      <pubDate>Wed, 19 Aug 2026 12:22:00 +0000</pubDate>
+      <enclosure
+        url="https://github.com/jjurko24/heypiclo-updates/releases/download/v0.2.5/Piclo-0.2.5.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="LhfpZDoq/JCWmoMXaJzkj4jkvjkhM6ELMbewLUjdYj/FI6fbsd/7JGKlNVEZ3zLItRKDsbGjzaIJkgJPuA9VDA==" length="13611940" />
+    </item>
+    <item>
       <title>Version 0.2.4</title>
       <sparkle:version>15</sparkle:version>
       <sparkle:shortVersionString>0.2.4</sparkle:shortVersionString>
