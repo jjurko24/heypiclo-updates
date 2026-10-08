@@ -10,6 +10,21 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.7 (build 18) — 2026-10-08
+
+### Fixed
+- A copied password can no longer ride into a command. Command Mode hands your clipboard to the model as reference material ("build off what I copied"); when a password manager marked that copy as concealed, it is now left out, the same rule a copied selection already followed.
+- Clearing a word in the Dictionary no longer turns it into a deletion rule. A blank word used to be saved as "replace this with nothing", which silently erased the spoken form from every take. You can still clear a field and retype; a blank is simply never saved.
+- Recent dictations opens about a second sooner in apps that hide their selection from Accessibility (VS Code, browsers, terminals). Piclo no longer sends a second copy keystroke when the first one found nothing to copy.
+- The local-model warm-up now reports what happened and how long it took, instead of saying "complete" even when the server never answered.
+- A take that starts with "snippet …" but matches no saved snippet is now noted in the log, so a snippet that came out as literal words can be traced instead of guessed at.
+- Snippet calls survive more mishearings. "Slip in my GCC email" and "Snipping my address" now count as the trigger when they open a take (mid-sentence those stay ordinary words). And when a take opens with "snippet" but the name came out wrong, it still finds the right one: "Snippets Random man log line", "Snippet Gccc email" and "Snippet. Piccolo pitch" all land, while talk about snippets ("the snippet addresses the issue", "a snippet of my email") stays untouched.
+
+### Changed
+- Local models stay loaded for two hours after your last take instead of your server's default five minutes, so the first dictation after a short break no longer waits on a reload. Servers that don't understand the request are unaffected.
+- The local model list refreshes each time you open General, so a model you just pulled shows up without pressing Check.
+- Current local-model picks in the settings help: the MLX build of qwen3.6:35b runs about twice as fast on a 64 GB Mac.
+
 ## 0.2.6 (build 17) — 2026-08-19
 
 ### Added
