@@ -10,6 +10,11 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.8 (build 19) — 2026-10-08
+
+### Changed
+- You never wait on a local model that is still loading. If the model has been unloaded (after a long idle, a restart, or another app taking the memory), a short take used to sit for 10 to 15 seconds while it loaded. Now the take goes in as heard right away, the pill says "As heard · model warming", and the next take is formatted as usual. The decision is made from the warm-up ping Piclo sends when you start talking, never from how long cleanup takes, so a long take that takes a few seconds to format on a loaded model is never mistaken for a cold one. Commands are unchanged: they wait for the model, since there is nothing sensible to fall back to.
+
 ## 0.2.7 (build 18) — 2026-10-08
 
 ### Fixed
