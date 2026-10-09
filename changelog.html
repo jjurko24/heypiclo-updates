@@ -10,6 +10,11 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.9 (build 20) — 2026-10-09
+
+### Fixed
+- The "never wait on a loading model" rule now also covers a model that was unloaded while you were talking. 0.2.8 checked only at the start of a take; if another app took the memory during a long take, the cleanup still sat on the reload (seen live: 17 seconds). Now a take longer than a few seconds re-checks the model at stop, alongside the cleanup, so a loaded model costs nothing extra and an unloaded one goes in as heard with the same "As heard · model warming" cue.
+
 ## 0.2.8 (build 19) — 2026-10-08
 
 ### Changed
