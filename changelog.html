@@ -10,6 +10,14 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.10 (build 21) — 2026-10-10
+
+### Added
+- "Keep the microphone warm", in General → Microphone, off unless you turn it on. Every take used to spend about half a second opening the microphone after your gesture, and a first word spoken in that window could be lost (a short take sometimes came back empty). With this on, the microphone stays open between dictations, so a take starts listening the instant you ask. The trade: macOS keeps its microphone indicator on while Hey Piclo is running. Audio between takes is discarded as it arrives; nothing is kept, measured, or written anywhere. If your microphone is a pair of Bluetooth headphones, keeping it open can also hold them in their lower-quality call mode.
+
+### Changed
+- The log now records how long the microphone took to come alive for each take, broken into its steps, so a slow start can be seen rather than guessed at.
+
 ## 0.2.9 (build 20) — 2026-10-09
 
 ### Fixed
