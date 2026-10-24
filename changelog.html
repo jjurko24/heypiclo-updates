@@ -10,6 +10,11 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.13 (build 24) — 2026-10-24
+
+### Fixed
+- The last words of a take no longer go missing or come out garbled, and sentences no longer break in the wrong place with the rest glued onto the next one. With streaming transcription on, the app used to transcribe the take in pieces while you spoke and only decode the remainder when you stopped; the cut between pieces could land in the middle of a word, and the words around each cut were lost, repeated, or restarted as a new sentence. The final text is now one decode of the whole take. The live word count while you speak is unchanged. The extra wait is well under the cleanup step: about a fifth of a second on a typical take, about half a second on a 90-second one.
+
 ## 0.2.12 (build 23) — 2026-10-24
 
 ### Changed
