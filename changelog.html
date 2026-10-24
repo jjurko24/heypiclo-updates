@@ -10,6 +10,16 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.12 (build 23) — 2026-10-24
+
+### Changed
+- The local model is now held in memory for 15 minutes after a take instead of 2 hours. While you are dictating it stays warm exactly as before; after a longer pause the first take reloads it in about ten seconds (and still lands as heard, as since 0.2.8). The 2-hour hold kept a 38 GB model pinned through long edit sessions and pushed the Mac into heavy swap.
+
+## 0.2.11 (build 22) — 2026-10-11
+
+### Changed
+- Fresh installs and blank model slots now default to the current models: Claude Haiku 5.5 / Sonnet 5.5 / Opus 5.5, ChatGPT GPT-6 Luna / GPT-6.1 Sol / GPT-6 Astra, and Gemini 3.5 Flash-Lite / Gemini 3.6 Flash. Any model you have already picked stays exactly as it is.
+
 ## 0.2.10 (build 21) — 2026-10-10
 
 ### Added
