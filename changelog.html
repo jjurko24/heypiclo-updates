@@ -10,6 +10,13 @@ margin:32px auto;padding:0 20px;color:#1d1d1f;background:#fff;white-space:pre-wr
 
 All notable changes per released version, newest first. The publish script turns this into the release notes Sparkle shows with each update prompt.
 
+## 0.2.14 (build 26) — 2026-10-26
+
+### Fixed
+- Quiet dictation is no longer thrown away. A safety check that drops long recordings of an empty room measured "speech" by loudness alone, so a softly spoken take (early in the morning, say) could read as silence and be discarded even though it had been transcribed clearly. The check now also asks the speech engine how sure it is: a take it transcribed confidently always goes through, however quietly you spoke. Recordings of a genuinely empty room are still dropped as before.
+- If that check ever does drop a take, the words are kept in Recent dictations (in memory, like everything there) instead of being lost.
+- The live word count keeps up when you speak softly. Quiet speech dips below the microphone's "someone is talking" level between syllables, so the counter treated most of a soft take as silence and stalled, even for words already transcribed. It now always catches up to the words it has heard, and short dips between syllables no longer pause it.
+
 ## 0.2.13 (build 24) — 2026-10-24
 
 ### Fixed
